@@ -1,0 +1,31 @@
+.navegacao{
+    background-color: #001b50;
+    height: 100%;
+}
+h3{
+    background-color: #262626;
+    color: #a7a7a7;
+}
+.components{
+    overflow:hidden;
+    background-color: #001b50;
+}
+.titulo1{
+    background-color: #01205f ;
+}
+.titulo1 a{
+    
+    color: #c8d7e7;
+    margin-bottom: 5px;
+    font-size: 15px;
+    display: block;
+    padding: 10px 5px;
+    margin-left: 5px;
+    
+}
+.titulo2 li a{
+    margin-left: 15px;
+    display: hidden;
+    color:#fff;
+    text-decoration: dashed;
+}

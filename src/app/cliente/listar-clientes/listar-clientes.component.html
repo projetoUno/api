@@ -1,0 +1,35 @@
+  
+     <form class="row form-inline formulario">
+       <div class="col-8 ">
+         <input type="text" class="form-control campo " id="pesquisar" placeholder="Digite o nome ou CPF do cliente:." name="pesquisar">
+       </div>
+       <button type="submit" class="btn btn-primary botao" >Pesquisar</button>
+     </form>
+   <div class="row">
+   <table class="table col-12 border">
+       
+       <thead>
+         <tr >
+           <th scope="col">Codigo</th>
+           <th scope="col">Nome</th>
+           <th scope="col">CPF/CNPJ</th>
+           <th scope="col">Telefone</th>
+           <th scope="col">Editar</th>
+           <th scope="col">Excluir</th>
+         </tr>
+       </thead>
+       
+       <tbody>
+          <tr   *ngFor="let cliente of clientes ">
+           <th scope="row">{{cliente.id_cliente}}</th>
+           <td>{{cliente.nome}}</td>
+           <td>{{cliente.cpfCnpj}}</td>
+           <td>{{cliente.ddd}}{{cliente.telefone}}</td>
+           <td><a class="btn  btn-info" (click) = "editar(cliente.id_cliente)">Editar</a></td>
+           <td><a class="btn btn-danger">Excluir</a></td>
+         </tr>  
+       </tbody>
+     </table>
+</div>
+
+

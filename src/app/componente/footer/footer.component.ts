@@ -11,5 +11,13 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // nome = "Daniel"
+  // adicionado = false
+  // funcionario = []
 
+  // adicionar(){
+  //   console.log(this.nome)
+  //   this.adicionado = true
+  //   this.funcionario.push(this.nome)
+  // }
 }

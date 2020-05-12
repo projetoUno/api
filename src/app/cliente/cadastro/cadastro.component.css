@@ -1,14 +1,19 @@
 .formulario{
-    margin-left: 22%;
+    margin-left: 3%;
     font-size: 15px;
 }
 .formulario h3{
-    margin-left: 10px;
+    background-color: #bfbfbf;
+   
 }
-.botaoDireita{
-    margin-left: 77%;
-    margin-bottom: 10px;
-    margin-right: 1px;
-    
+.botaoDireita {
+    background-color: #bfbfbf;
+    margin: 0;
+   
+} 
+.botaoDireita h3{
+    margin: 0;
+    padding: 5px;
+}
 
-}
+

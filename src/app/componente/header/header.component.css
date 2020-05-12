@@ -1,0 +1,25 @@
+.titulo{
+    display: flex;
+    color: #fff;
+}
+.titulo1{
+    background-color: #012060;
+    font-size: 15px;
+    color: #fff;
+}
+
+.titulo1 span{
+    text-align: right;
+    display: block;
+    margin-top: 5px;
+}
+.titulo2{
+    background-color: #0071c1 ;
+    text-align: center;
+    
+}
+.titulo2 span{
+    font-size: 25px;
+    margin-top: 10px;
+    
+}
