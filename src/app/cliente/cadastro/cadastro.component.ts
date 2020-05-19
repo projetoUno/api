@@ -62,7 +62,24 @@ export class CadastroComponent implements OnInit {
      });
   }
 
-  limparCampo(){
+  limparCampoCliente(){
+    this.cliente = {
+      nome: "",
+      email: "",
+       telefone: null,
+      ddd: null,
+      cpfCnpj: null,
+      dataNascimento: "",
+      sexo: "",
+      cep:"",
+      endereco: "",
+      complemento: "",
+      numero: null,
+      bairro: ""
+    }
+  }
+
+  limparCampoVeiculo(){
     this.veiculo = {
       placa: "",
       marca: "",
@@ -72,17 +89,42 @@ export class CadastroComponent implements OnInit {
     }
   }
 
+  VerificarCPF(cpf: number){
+    this.clienteService.validarCPF(cpf).subscribe((valido) =>{
+      if(valido){
+        this.clienteService.showMensagem("CPF já cadastrado")
+      }
+     console.log(valido)
+    })
+  }
+
   createCliente(): void{
     const id =  this.route.snapshot.paramMap.get('id')
-    if(id){
+    if (id){
       this.clienteService.atualizarCliente(this.cliente).subscribe(() =>{
         this.clienteService.showMensagem("Cliente alterado com sucesso")
         this.rota.navigate(['/listar'])
       })
     }else{
-    this.clienteService.create(this.cliente).subscribe(() =>{
-      this.clienteService.showMensagem('Cliente criado com sucesso')
-    })
-  }
+          let cpf = this.clienteService.validarCPF(this.cliente.cpfCnpj)
+          if(cpf){
+            this.clienteService.showMensagem("CPF já cadastrado")
+          }else{
+                  this.clienteService.create(this.cliente).subscribe(() =>{
+                      console.log();
+                      this.clienteService.showMensagem('Cliente criado com sucesso')
+                      this.rota.navigate['/cadastro/:id']
+                    })
+                  }
+                }
+              }
+
+  atualizarELimparCampos(){
+    this.createCliente
+    this.limparCampoCliente
+    this.limparCampoVeiculo
+    
+   
+    
   }
 }

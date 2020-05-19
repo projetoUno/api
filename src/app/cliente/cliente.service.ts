@@ -9,7 +9,7 @@ import {tap} from 'rxjs/operators'
 })
 export class ClienteService {
 
-  private readonly baseUrl = "http://localhost:8080/clientes"
+  private readonly baseUrl = "https://lavajato-api.herokuapp.com/clientes"
   constructor(private alert: MatSnackBar, private http: HttpClient) { }
 
   showMensagem(msg : string): void {
@@ -34,4 +34,14 @@ buscarId(id: string): Observable<Cliente>{
  atualizarCliente(cliente: Cliente) : Observable<Cliente>{
   return this.http.post<Cliente>(this.baseUrl, cliente)
  }
+validarCPF(cpf: number): Observable<Cliente>{
+  const url = `${this.baseUrl}/cpf/${cpf}`
+  return this.http.get<Cliente>(url);
+}
+
+removerCliente(id: number): Observable<Cliente>{
+  const url = `${this.baseUrl}/${id}`
+  return this.http.delete<Cliente>(url)
+}
+
 }

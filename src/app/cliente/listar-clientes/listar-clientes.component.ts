@@ -14,20 +14,20 @@ export class ListarClientesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.lista().subscribe(dados => this.clientes = dados)
+    
   }
-    nome = "Daniel"
-    adicionado = false
-   funcionario = []
-
-   adicionar(){
-     console.log(this.nome)
-     this.adicionado = true
-     this.funcionario.push(this.nome)
-   }
 
   editar(id: number){
     this.rota.navigate(['cadastro/'+id])
     console.log(id)
   } 
+  remover(id: number){
+    this.service.removerCliente(id).subscribe(() =>{
+      this.service.showMensagem("Cliente excluido com sucesso")
+    
+      
+    })
+    this.rota.navigate(['/listar'])
+  }
 
 }
