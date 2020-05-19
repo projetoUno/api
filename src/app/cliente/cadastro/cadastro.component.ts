@@ -107,7 +107,7 @@ export class CadastroComponent implements OnInit {
       })
     }else{
           let cpf = this.clienteService.validarCPF(this.cliente.cpfCnpj)
-          if(cpf){
+          if(!cpf){
             this.clienteService.showMensagem("CPF já cadastrado")
           }else{
                   this.clienteService.create(this.cliente).subscribe(() =>{
