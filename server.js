@@ -1,12 +1,16 @@
+//Importa as dependências que acabamos de instalar
 const express = require('express');
 const path = require('path');
-const lavajato = process.env.npm_package_name;
+
 const app = express();
- 
-app.use(express.static(`${__dirname}/dist/${lavajato}`));
- 
-app.get('/*', (req, res) => {
-res.sendFile(path.join(`${__dirname}/dist/${lavajato}/index.html`));
+
+// Serve os arquivos estáticos da pasta dist (gerada pelo ng build)
+app.use(express.static(__dirname + '/dist/lavaJato'));
+
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'/dist/lavaJato/index.html'));
 });
- 
+
+// Inicia a aplicação pela porta configurada
 app.listen(process.env.PORT || 8080);
