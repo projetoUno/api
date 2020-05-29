@@ -16,3 +16,7 @@
 .card{
     margin: 10px 10px;
 }
+
+.card-footer a{
+    margin-left: 5px;
+}
