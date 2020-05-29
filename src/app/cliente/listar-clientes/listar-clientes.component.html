@@ -1,16 +1,32 @@
   
      <form class="row form-inline formulario">
-       <div class="col-8 ">
+       <div class="col-md-5 col-lg-8  col-sm-12 ">
          <input type="text" class="form-control campo " id="pesquisar" placeholder="Digite o nome ou CPF do cliente:." name="pesquisar">
        </div>
-       <button type="submit" class="btn btn-primary botao" >Pesquisar</button>
+       <div class="col-md-4 col-lg-3  col-sm-12 botao ">
+        <button type="submit" class="btn btn-primary botao" >Pesquisar</button>  
+       </div>
      </form>
-   <div class="row">
-   <table class="table col-12 border">
+   <div class="row" >
+    <div class="card col-md-5 col-lg-3  col-sm-12 " *ngFor="let cliente of clientes ">
+      <div class="card-body ">
+            <label>Nome.: {{cliente.nome}}</label>
+            <label > CPF / CNPJ.: {{cliente.cpfCnpj}}</label>
+            <label>Telefone.:{{cliente.ddd}}{{cliente.telefone}}</label>
+          </div>
+      
+      <div class="card-footer">
+        <a class="btn  btn-info" (click) = "editar(cliente.id_cliente)">Editar</a>
+        <a class="btn btn-danger" (click) =  remover(cliente.id_cliente)>Excluir</a>
+      </div>
+    </div>
+  </div>
+    
+   <!-- <table class="table col-12 border">
        
        <thead>
          <tr >
-           <th scope="col">Codigo</th>
+          <th scope="col">Codigo</th>
            <th scope="col">Nome</th>
            <th scope="col">CPF/CNPJ</th>
            <th scope="col">Telefone</th>
@@ -29,7 +45,6 @@
            <td><a class="btn btn-danger" (click) =  remover(cliente.id_cliente)>Excluir</a></td>
          </tr>  
        </tbody>
-     </table>
-</div>
+     </table> -->
 
 

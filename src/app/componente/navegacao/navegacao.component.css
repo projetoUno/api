@@ -1,18 +1,12 @@
 .navegacao{
-    background-color: #001b50;
+    width: 100%;
     height: 100%;
 }
 h3{
     background-color: #262626;
     color: #a7a7a7;
 }
-.components{
-    overflow:hidden;
-    background-color: #001b50;
-}
-.titulo1{
-    background-color: #01205f ;
-}
+
 .titulo1 a{
     
     color: #c8d7e7;
@@ -28,4 +22,8 @@ h3{
     display: hidden;
     color:#fff;
     text-decoration: dashed;
+}
+.barra{
+    background-color: #001b50;
+    position: absolute;
 }

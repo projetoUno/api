@@ -1,9 +1,8 @@
+import { Cliente } from './../cliente.model';
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
-import { Cliente } from '../cliente.model';
 import { NgxViacepService } from '@brunoc/ngx-viacep';
 import { Router,ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -13,24 +12,25 @@ export class CadastroComponent implements OnInit {
   cliente: Cliente = {
     nome: "",
     email: "",
-     telefone: null,
+    telefone: null,
     ddd: null,
-    cpfCnpj: null,
+    cpfCnpj: "",
     dataNascimento: "",
     sexo: "",
     cep:"",
     endereco: "",
     complemento: "",
     numero: null,
-    bairro: ""
-  }
-  veiculo = {
-    placa: "",
-    marca: "",
-    modelo: "",
-    cor: "",
-    tamanho: ""
-  }
+    bairro: "",
+    carros: []
+}
+veiculo = {
+placa: "",
+marca: "",
+modelo: "",
+cor: "",
+tamanho: ""
+}
   veiculos = []
   Endereco = []
   
@@ -40,15 +40,21 @@ export class CadastroComponent implements OnInit {
     const id =  this.route.snapshot.paramMap.get('id')
     console.log(id)
     if(id){
-      this.clienteService.buscarId(id).subscribe(dados => this.cliente = dados)
-      console.log(this.cliente)
+     
+      this.clienteService.buscarId(id).subscribe(dados =>{
+        this.cliente = dados
+        console.log(this.cliente)
+        for(var v of this.cliente.carros){
+          this.veiculos.push(v)
+        }      
+      } )
+      
     }
   }
   adicionarVeiculos(){
-    console.log(this.veiculo)
     this.veiculos.push(this.veiculo)
-   this.clienteService.showMensagem("Carro adicionado com sucesso")
-   
+    this.clienteService.showMensagem("Carro adicionado com sucesso")
+  
   }
 
   procurarCEP(){
@@ -63,20 +69,7 @@ export class CadastroComponent implements OnInit {
   }
 
   limparCampoCliente(){
-    this.cliente = {
-      nome: "",
-      email: "",
-       telefone: null,
-      ddd: null,
-      cpfCnpj: null,
-      dataNascimento: "",
-      sexo: "",
-      cep:"",
-      endereco: "",
-      complemento: "",
-      numero: null,
-      bairro: ""
-    }
+    this.cliente 
   }
 
   limparCampoVeiculo(){
@@ -88,37 +81,51 @@ export class CadastroComponent implements OnInit {
       tamanho: ""
     }
   }
+  // cpf(){
+  //   str.replace(/[^\d]+/g,'')
+  // }
 
-  VerificarCPF(cpf: number){
-    this.clienteService.validarCPF(cpf).subscribe((valido) =>{
-      if(valido){
-        this.clienteService.showMensagem("CPF já cadastrado")
-      }
-     console.log(valido)
+  VerificarCPF(cpf: string){
+    let numero = cpf.replace(/[^\d]+/g,'')
+    let validarCPF = this.clienteService.VerificarCPF(numero)
+    
+    this.clienteService.validarCPF(numero).subscribe((valido) =>{
+      
+      if(valido)this.clienteService.showMensagem("CPF já cadastrado")
+      if(!validarCPF)this.clienteService.showMensagem("CPF não existe")
     })
   }
 
   createCliente(): void{
     const id =  this.route.snapshot.paramMap.get('id')
     if (id){
+      this.cliente.carros = this.veiculos
       this.clienteService.atualizarCliente(this.cliente).subscribe(() =>{
         this.clienteService.showMensagem("Cliente alterado com sucesso")
         this.rota.navigate(['/listar'])
       })
     }else{
-          let cpf = this.clienteService.validarCPF(this.cliente.cpfCnpj)
-          if(!cpf){
+      let numero = this.cliente.cpfCnpj.replace(/[^\d]+/g,'');
+          this.clienteService.validarCPF(numero).subscribe(cpf=>{
+            console.log
+          
+          let validarCPF = this.clienteService.VerificarCPF(numero)
+          if(validarCPF){
+            this.clienteService.showMensagem("Esse CPF não existe")
+          }
+          if(cpf){
             this.clienteService.showMensagem("CPF já cadastrado")
           }else{
-                  this.clienteService.create(this.cliente).subscribe(() =>{
-                      console.log();
-                      this.clienteService.showMensagem('Cliente criado com sucesso')
-                      this.rota.navigate['/cadastro/:id']
-                    })
+            this.cliente.carros = this.veiculos
+            this.cliente.cpfCnpj = numero
+            this.clienteService.create(this.cliente).subscribe(() =>{
+              this.clienteService.showMensagem('Cliente criado com sucesso')
+              this.rota.navigate['/cadastro/']
+             })
                   }
-                }
+                })
               }
-
+            }
   atualizarELimparCampos(){
     this.createCliente
     this.limparCampoCliente

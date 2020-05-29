@@ -1,6 +1,18 @@
 .formulario{
     margin: 10px 10px;
 }
-.formulario div input{
+.campo{
     width: 100%;
+}
+.botao{
+    width: 100%;
+}
+@media (max-width: 575.98px) { 
+    .botao{
+        margin-top: 5px;
+    }
+}
+
+.card{
+    margin: 10px 10px;
 }
