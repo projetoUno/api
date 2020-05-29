@@ -9,9 +9,9 @@ import {tap} from 'rxjs/operators'
 })
 export class ClienteService {
 
-  private readonly baseUrl = "http://localhost:8080/clientes"
+  private readonly baseUrl = "https://lavajato-back.herokuapp.com/clientes"
 
-  private readonly carroUrl = "http://localhost:8080/carros"
+  private readonly carroUrl = "https://lavajato-back.herokuapp.com/carros"
   constructor(private alert: MatSnackBar, private http: HttpClient) { }
 
   showMensagem(msg : string): void {
