@@ -69,8 +69,8 @@
                   </div>
             </div>
             <div class="row botaoDireita">
-              <h3  class="col-10">Veículos</h3>
-              <button class="btn btn-primary btn-sm  " data-toggle="modal" data-target="#exampleModal" (click) = "limparCampoVeiculo()">Cadastrar Veiculo</button>  
+              <h3  class="col-md-6 col-lg-7  col-sm-7">Veículos</h3>
+              <button class="btn btn-primary btn-sm col-sm-4  btn-veiculo   " data-toggle="modal" data-target="#exampleModal" (click) = "limparCampoVeiculo()">Cadastrar Veiculo</button>  
             </div>
                       <div class="row" >
                         <div class="veiculo_vazio col-12" *ngIf="veiculos.length==0">
@@ -87,10 +87,10 @@
                         </div>
                       </div>
             <div class="row" style="margin-bottom: 10px; margin-left: 10px;">
-                <div class="col-1">
+                <div class="col-md-3 col-lg-3  col-sm-12">
               <button class="btn btn-primary" (click) = "createCliente()" >Salvar</button> 
             </div>  
-                <div class="col-11">
+                <div class="col-md-3 col-lg-3  col-sm-12">
                 <button class="btn btn-success" (click) = "atualizarELimparCampos()">Salvar e Novo</button>
                 </div>
             </div>
@@ -112,31 +112,31 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="placa">Placa.:</label>
-          <input type="text" class="form-control" id="placa" name="placa" [(ngModel)] = "veiculo.placa">
+          <input type="text" class="form-control" required id="placa" name="placa" [(ngModel)] = "veiculo.placa">
         </div>
         <div class="form-group">
           <label for="marca">Marca.:</label>
-          <input type="text" class="form-control" id="marca" name="marca" [(ngModel)] = "veiculo.marca">
+          <input type="text" class="form-control"  required id="marca" name="marca" [(ngModel)] = "veiculo.marca">
         </div>
         <div class="form-group">
           <label for="modelo">Modelo.:</label>
-          <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)] = "veiculo.modelo">
+          <input type="text" class="form-control" required id="modelo" name="modelo" [(ngModel)] = "veiculo.modelo">
         </div>
         <div class="form-group">
           <label for="cor">Cor.:</label>
-          <input type="text" class="form-control" id="cor" name="cor" [(ngModel)] = "veiculo.cor">
+          <input type="text" class="form-control" required id="cor" name="cor" [(ngModel)] = "veiculo.cor">
         </div>
         <div class="form-group">
           <label for="tamanho">Tamanho.:</label>
-          <select [(ngModel)] = veiculo.tamanho>
+          <select required [(ngModel)] = veiculo.tamanho>
               <option value="PEQUENO">Pequeno</option>
               <option value="MEDIO">Medio</option>
               <option value="GRANDE">Grande</option>
           </select>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary" (click) = "adicionarVeiculos()"  data-dismiss="modal">Salvar</button>
+      <div class="modal-footer row">
+        <button type="button" class="btn btn-primary col-md-4"  (click) = "adicionarVeiculos()"  data-dismiss="modal">Salvar</button>
+        <button type="button" class="btn btn-secondary col-md-4" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>

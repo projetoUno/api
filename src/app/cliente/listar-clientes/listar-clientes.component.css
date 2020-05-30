@@ -11,6 +11,9 @@
     .botao{
         margin-top: 5px;
     }
+    .card-body label{
+    display: block;
+    }
 }
 
 .card{

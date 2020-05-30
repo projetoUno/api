@@ -6,20 +6,46 @@
     background-color: #012060;
     font-size: 15px;
     color: #fff;
+    
 }
 
 .titulo1 span{
     text-align: right;
     display: block;
-    margin-top: 5px;
+    margin: 10px 6px;
 }
 .titulo2{
     background-color: #0071c1 ;
     text-align: center;
+    padding: 10px;
     
 }
 .titulo2 span{
     font-size: 25px;
-    margin-top: 10px;
+  
     
 }
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .titulo1{
+        margin: 0;
+        padding: 0;
+    }
+    .titulo1 span{
+        font-size: 15px;
+        margin: 20px 5px;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

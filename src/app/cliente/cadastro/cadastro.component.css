@@ -1,6 +1,7 @@
 .formulario{
     margin-left: 3%;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 .formulario h3{
     background-color: #bfbfbf;
@@ -8,19 +9,17 @@
 }
 .botaoDireita {
     background-color: #bfbfbf;
-    margin: 0;
-   
+
 } 
 .botaoDireita h3{
-    margin: 0;
-    padding: 5px;
+    margin: auto 1%;
 }
 .card{
     margin: 5px auto
 }
 .card-header{
     text-align: center;
-    background-color: #ff0000;
+    background-color: #99ccff;
 }
 .card-body label{
     display: block;
@@ -33,5 +32,31 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
+.btn{
+    width: 100%;
+    margin: 5px auto;
+}
+.btn-veiculo{
+    margin-right: 3px;
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .botaoDireita {
+        text-align: center;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
 
 

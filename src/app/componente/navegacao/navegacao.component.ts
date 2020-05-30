@@ -12,4 +12,8 @@ export class NavegacaoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+
 }

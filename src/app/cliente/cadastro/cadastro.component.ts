@@ -97,35 +97,29 @@ tamanho: ""
   }
 
   createCliente(): void{
+    let numero = this.cliente.cpfCnpj.replace(/[^\d]+/g,'');
+    let validarCPF = this.clienteService.VerificarCPF(numero)
+    this.cliente.carros = this.veiculos
+    this.cliente.cpfCnpj = numero
+    if(!validarCPF){
+      this.clienteService.showMensagem("Esse CPF não existe")
+    }else if(numero){
+      this.clienteService.showMensagem("CPF já cadastrado")
+    }else{
     const id =  this.route.snapshot.paramMap.get('id')
     if (id){
-      this.cliente.carros = this.veiculos
-      this.clienteService.atualizarCliente(this.cliente).subscribe(() =>{
+        this.clienteService.atualizarCliente(this.cliente).subscribe(() =>{
         this.clienteService.showMensagem("Cliente alterado com sucesso")
         this.rota.navigate(['/listar'])
       })
     }else{
-      let numero = this.cliente.cpfCnpj.replace(/[^\d]+/g,'');
-          this.clienteService.validarCPF(numero).subscribe(cpf=>{
-            console.log
-          
-          let validarCPF = this.clienteService.VerificarCPF(numero)
-          if(validarCPF){
-            this.clienteService.showMensagem("Esse CPF não existe")
+        this.clienteService.create(this.cliente).subscribe(() =>{
+        this.clienteService.showMensagem('Cliente criado com sucesso')
+        this.rota.navigate['/cadastro/']
+            })
           }
-          if(cpf){
-            this.clienteService.showMensagem("CPF já cadastrado")
-          }else{
-            this.cliente.carros = this.veiculos
-            this.cliente.cpfCnpj = numero
-            this.clienteService.create(this.cliente).subscribe(() =>{
-              this.clienteService.showMensagem('Cliente criado com sucesso')
-              this.rota.navigate['/cadastro/']
-             })
-                  }
-                })
-              }
-            }
+        }
+      }
   atualizarELimparCampos(){
     this.createCliente
     this.limparCampoCliente

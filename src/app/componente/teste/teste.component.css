@@ -1,8 +1,20 @@
-.container{
+.container-fluid{
     margin-top: 10px;
     height: 100%;
 }
-.navegacao1{
+#mySidebar{
+    display: none;
+    animation: animateleft 0.4s;
+    position: absolute !important;
+    z-index: 1;
     background-color: #001b50;
-   
+}
+.botao{
+    height: 1%;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
