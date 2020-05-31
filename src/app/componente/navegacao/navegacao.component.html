@@ -14,13 +14,13 @@
           <a href="#funcionamento" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >Funcionamento diário</a>
           <ul class="collapse list-unstyled titulo2" id="funcionamento">
             <li>
-              <a href="#">Adicionar serviços</a>
+              <a href="#" (click)="w3_close()">Adicionar serviços</a>
             </li>
             <li>
-              <a href="#">Fila de espera</a>
+              <a href="#" (click)="w3_close()">Fila de espera</a>
             </li>
             <li>
-              <a href="#">Histórico de serviços</a>
+              <a href="#" (click)="w3_close()">Histórico de serviços</a>
             </li>
           </ul> 
         </li><!--Fim menu funcionamento diario-->
@@ -29,10 +29,10 @@
           <a href="#cliente" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Clientes</a>
           <ul class="collapse list-unstyled titulo2" id="cliente" >
             <li>
-              <a [routerLink]="['/cadastro']">Cadastrar</a>
+              <a [routerLink]="['/cadastro']" (click)="w3_close()">Cadastrar</a>
             </li>
             <li>
-              <a [routerLink]="['/listar']">Alterar | Consultar</a>
+              <a [routerLink]="['/listar']" (click)="w3_close()">Consultar</a>
             </li>
           </ul> 
         </li><!--Fim menu Cliente-->
@@ -41,10 +41,10 @@
           <a href="#veiculo" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Veículos</a>
           <ul class="collapse list-unstyled titulo2" id="veiculo" >
             <li>
-              <a href="#">Cadastrar</a>
+              <a href="#" (click)="w3_close()">Cadastrar</a>
             </li>
             <li>
-              <a href="#">Alterar | Consultar</a>
+              <a [routerLink]="['/listarVeiculos']" (click)="w3_close()" >Consultar</a>
             </li>
           </ul> 
         </li><!--Fim menu Veículo-->
@@ -53,10 +53,10 @@
           <a href="#servicos" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Serviços</a>
           <ul class="collapse list-unstyled titulo2" id="servicos" >
             <li>
-              <a href="#">Cadastrar</a>
+              <a href="#" (click)="w3_close()">Cadastrar</a>
             </li>
             <li>
-              <a href="#">Alterar | Consultar</a>
+              <a href="#" (click)="w3_close()">Alterar | Consultar</a>
             </li>
           </ul> 
         </li><!--Fim menu Serviços-->
@@ -65,13 +65,13 @@
           <a href="#almoxarifado" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Almoxarifado</a>
           <ul class="collapse list-unstyled titulo2" id="almoxarifado" >
             <li>
-              <a href="#">Cadastrar produto</a>
+              <a href="#" (click)="w3_close()">Cadastrar produto</a>
             </li>
             <li>
-              <a href="#">Alterar produto</a>
+              <a href="#" (click)="w3_close()">Alterar produto</a>
             </li>
             <li>
-              <a href="#">Consultar estoque</a>
+              <a href="#" (click)="w3_close()">Consultar estoque</a>
             </li>
           </ul> 
         </li><!--Fim menu Almoxarifado-->
@@ -80,13 +80,13 @@
           <a href="#financeiro" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Financeiro</a>
           <ul class="collapse list-unstyled titulo2" id="financeiro" >
             <li>
-              <a href="#">Registrar custos</a>
+              <a href="#" (click)="w3_close()">Registrar custos</a>
             </li>
             <li>
-              <a href="#">Registar receitas</a>
+              <a href="#" (click)="w3_close()">Registar receitas</a>
             </li>
             <li>
-              <a href="#">Gestão de pagamentos</a>
+              <a href="#" (click)="w3_close()">Gestão de pagamentos</a>
             </li>
             <li>
               <a href="#">Análise financeira</a>

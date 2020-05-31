@@ -18,7 +18,8 @@ import { NavegacaoComponent } from './componente/navegacao/navegacao.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { TesteComponent } from './componente/teste/teste.component'; 
 import {NgxViacepModule} from '@brunoc/ngx-viacep';
-import { ListarClientesComponent } from './cliente/listar-clientes/listar-clientes.component'
+import { ListarClientesComponent } from './cliente/listar-clientes/listar-clientes.component';
+import { ListarComponent } from './veiculos/listar/listar.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListarClientesComponent } from './cliente/listar-clientes/listar-client
     CadastroComponent,
     NavegacaoComponent,
     TesteComponent,
-    ListarClientesComponent
+    ListarClientesComponent,
+    ListarComponent
   ],
   imports: [
     BrowserModule,

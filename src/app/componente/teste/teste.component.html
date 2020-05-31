@@ -5,11 +5,12 @@
   </div>
   </div>
   <div class="row">
-    <div class="col-12 col-sm-4 col-lg-2 navegacao1" id="mySidebar">
-      <app-navegacao></app-navegacao>
+    <div class="col-12 col-sm-4 col-lg-2">
+      <app-navegacao  class="navegacao1" id="mySidebar"></app-navegacao>
+      <button class="btn btn-outline-primary botao" (click)="w3_open()">Menu</button>
     </div>
-    <button class="btn btn-outline-primary botao" (click)="w3_open()">Menu</button>
-    <div class="col-10 conteudo">
+   
+    <div class="col-10 conteudo" (click) = "w3_close()">
       <router-outlet></router-outlet>
     </div>
   </div>

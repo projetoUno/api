@@ -8,9 +8,7 @@
     position: absolute !important;
     z-index: 1;
     background-color: #001b50;
-}
-.botao{
-    height: 1%;
+    width: 100%;
 }
 .footer{
     position: fixed;

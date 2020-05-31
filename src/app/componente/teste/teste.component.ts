@@ -21,7 +21,8 @@ export class TesteComponent implements OnInit {
     }
     
   }
-
- 
+  w3_close(){
+    document.getElementById("mySidebar").style.display = "none"; 
+  }
 
 }
